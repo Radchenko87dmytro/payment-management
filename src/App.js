@@ -1,10 +1,11 @@
 // import CostItem from "./components/CostItem";
 import React from "react";
 import Costs from "./components/Costs/Costs";
+import NewCost from "./components/NewCost/NewCost";
 
 
-
-function App() {
+// const App = () =>
+const App = () => {
 
 //const p = document.createElement('p');
 //p.textContent = 'Hey there!'
@@ -35,7 +36,7 @@ const costs = [
 
   return (
     <div>
-      <h1>Lets lern React!</h1>
+      <NewCost/>
       <Costs costs={costs}/>
 
       {/* <CostItem date={costs[0].date} description={costs[0].description} amount={costs[0].amount}/> 
