@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./CostForm.css"
 
-const CostForm = () => {
+const CostForm = (props) => {
     // document.getElementById().addEventListener('Click', (event) => {})
 
     const [inputName, setInputName] = useState("");
@@ -56,8 +56,8 @@ const CostForm = () => {
             date: new Date(inputDate)
         };
 
-        console.log(costDate);
-        setInputName('');  // set emty value after pressing button
+        props.onSaveCostData(costDate);
+        setInputName('');  // set emty value in input form after pressing button
         setInputAmount('');
         setInputDate('');
     };

@@ -13,16 +13,19 @@ const App = () => {
 
 const costs = [
   {
+    id: 'c1',
     date: new Date(2021, 2, 12),
     description: 'Fridge',
     amount: 900,
   },
   {
+    id: 'c2',
     date: new Date(2022, 11, 1),
     description: 'Bike',
     amount: 450,
   },
   {
+    id: 'c3',
     date: new Date(2022, 11, 25),
     description: 'jacket',
     amount: 380,
@@ -34,9 +37,14 @@ const costs = [
 //        React.createElement(Costs, {costs: costs})
 //        );
 
+const addCostHandler = (cost) => {
+  console.log(cost);
+  console.log('App Componemt');
+}
+
   return (
     <div>
-      <NewCost/>
+      <NewCost onAddCost={addCostHandler}/>
       <Costs costs={costs}/>
 
       {/* <CostItem date={costs[0].date} description={costs[0].description} amount={costs[0].amount}/> 
