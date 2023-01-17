@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 const CostItem = (props) => {
     // document.getElementById('root').addEventListener()
     const [description, setDescription] = useState(props.description); // useState can exists only in this place in component
-    console.log("Text in component definition");
+    //console.log("Text in component definition");
 
     const changeDescriptionHandler = () => {
         //description = "New Cost";
