@@ -51,7 +51,7 @@ const CostForm = (props) => {
         event.preventDefault(); // this method prevents action - request to the server
 
         const costDate = {
-            name: inputName,
+            description: inputName,
             amount: inputAmount, 
             date: new Date(inputDate)
         };

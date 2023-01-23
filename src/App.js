@@ -1,17 +1,10 @@
 // import CostItem from "./components/CostItem";
-import React from "react";
+import React, { useState } from "react";
 import Costs from "./components/Costs/Costs";
 import NewCost from "./components/NewCost/NewCost";
 
 
-// const App = () =>
-const App = () => {
-
-//const p = document.createElement('p');
-//p.textContent = 'Hey there!'
-//document.getElementById('root').append(p);
-
-const costs = [
+const INITIAL_COSTS = [
   {
     id: 'c1',
     date: new Date(2021, 2, 12),
@@ -32,20 +25,44 @@ const costs = [
   }
 ]
 
+// const App = () =>
+const App = () => {
+
+//const p = document.createElement('p');
+//p.textContent = 'Hey there!'
+//document.getElementById('root').append(p);
+
+
+
+const [costs, setCosts] = useState(INITIAL_COSTS);
+
+
 // return React.createElement('div', {}, 
 //        React.createElement('h1', {}, "Lets lern React!"),
 //        React.createElement(Costs, {costs: costs})
 //        );
 
 const addCostHandler = (cost) => {
-  console.log(cost);
-  console.log('App Componemt');
+   setCosts(prevCosts => { // argument prevCosts we get automativ from react
+    
+    return [cost, ...prevCosts] //we are set new element (cost,) and adding all elements from previous array by helping operator spred (...prevCosts)
+   }); 
+  
+  // console.log(INITIAL_COSTS);
+  // console.log('App Componemt');
+}
+
+const filterHandler = (selectedYear) => {
+  console.log(selectedYear);
+  // cost = cost.filter(item =>{
+  //   cost.conteins(selectedYear);
+  // })
 }
 
   return (
     <div>
       <NewCost onAddCost={addCostHandler}/>
-      <Costs costs={costs}/>
+      <Costs costs={costs} onFilter={filterHandler}/>
 
       {/* <CostItem date={costs[0].date} description={costs[0].description} amount={costs[0].amount}/> 
       <CostItem date={costs[1].date} description={costs[1].description} amount={costs[1].amount}/>
