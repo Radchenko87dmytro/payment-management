@@ -4,6 +4,7 @@ import Card from "../UI/Card";
 import CostsFilter from "./CostsFilter";
 import { useState } from "react";
 import CostList from "./CostList";
+import CostsDiagram from "./CostsDiagram";
 
 const Costs = (props) => {
 
@@ -32,7 +33,7 @@ const Costs = (props) => {
             <Card className="costs">
                 <CostsFilter year={selectedYear} //<-this is two-way bindingg, we set value useState('2021') in CostFilter by attribute year={selectedYear}
                 onChangeYear={yearChangeHandler}/>
-
+                <CostsDiagram costs={filteredCosts}/>
                 <CostList costs={filteredCosts}/>
                 
                 {/* {filteredCosts.length === 0 && <p>In this year aren't payment</p>}
